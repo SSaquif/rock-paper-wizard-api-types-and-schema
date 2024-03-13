@@ -2,11 +2,11 @@
 import { z } from "zod";
 
 // Can contain only alphabets and numbers
-const usernameRegex = /[^a-zA-Z0-9]/;
+const usernameRegex = /^[a-zA-Z0-9]+$/;
 // Can contain only alphabets, letters, -, _
 // const passwordRegex = /.{8,}/;
 
-export const newGameEntrySchema = z
+export const NewGameEntrySchema = z
   .object({
     username: z
       .string({
@@ -37,8 +37,11 @@ export const newGameEntrySchema = z
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: "Passwords do not match",
+        path: ["confirmPassword"],
       });
     }
   });
 
-export type NewGameEntry = z.infer<typeof newGameEntrySchema>;
+export type NewGameEntry = z.infer<typeof NewGameEntrySchema>;
+
+export type test = string;
