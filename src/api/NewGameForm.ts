@@ -1,12 +1,17 @@
 // todo decide on the actual structure later
 import { z } from "zod";
+import { usernameRegex } from "../utils/regex";
 
-// Can contain only alphabets and numbers
-const usernameRegex = /^[a-zA-Z0-9]+$/;
-// Can contain only alphabets, letters, -, _
-// const passwordRegex = /.{8,}/;
+const PlayerColors = z.enum([
+  "red",
+  "blue",
+  "green",
+  "yellow",
+  "purple",
+  "brown",
+]);
 
-export const NewGameEntrySchema = z
+export const NewGameFormSchema = z
   .object({
     username: z
       .string({
@@ -29,8 +34,14 @@ export const NewGameEntrySchema = z
       .trim()
       // .regex(passwordRegex, "Password must contain only letters and numbers")
       .min(8, "Password should be at least 8 characters long")
-      .max(100, "Password should be at most 100 characters long"),
+      .max(30, "Password should be at most 100 characters long"),
     confirmPassword: z.string(),
+    selectedColor: z.enum(
+      ["red", "blue", "green", "yellow", "purple", "brown"],
+      {
+        required_error: "Player must select a color",
+      }
+    ),
   })
   .superRefine(({ password, confirmPassword }, ctx) => {
     if (password !== confirmPassword) {
@@ -42,6 +53,4 @@ export const NewGameEntrySchema = z
     }
   });
 
-export type NewGameEntry = z.infer<typeof NewGameEntrySchema>;
-
-export type test = string;
+export type NewGameForm = z.infer<typeof NewGameFormSchema>;
