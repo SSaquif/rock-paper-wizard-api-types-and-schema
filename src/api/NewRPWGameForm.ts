@@ -11,7 +11,7 @@ const PlayerColors = z.enum([
   "brown",
 ]);
 
-export const NewGameFormSchema = z
+export const NewRPWGameFormSchema = z
   .object({
     username: z
       .string({
@@ -53,4 +53,4 @@ export const NewGameFormSchema = z
     }
   });
 
-export type NewGameForm = z.infer<typeof NewGameFormSchema>;
+export type NewRPWGameForm = z.infer<typeof NewRPWGameFormSchema>;

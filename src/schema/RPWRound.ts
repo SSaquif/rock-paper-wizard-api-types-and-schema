@@ -1,4 +1,4 @@
-export interface Round {
+export interface RPWRound {
   game_id: string;
   round: number;
   created_at: Date | string;

@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { usernameRegex } from "../utils/regex";
 
-export const JoinGameFormSchema = z.object({
+export const JoinRPWGameFormSchema = z.object({
   username: z
     .string({
       required_error: "Username is required",
@@ -20,11 +20,10 @@ export const JoinGameFormSchema = z.object({
       required_error: "Password is required",
     })
     .trim()
-    .min(8, "Password should be at least 8 characters long")
-    .max(30, "Password should be at most 100 characters long"),
+    .min(8, "Password should be at least 8 characters long"),
   selectedColor: z.enum(["red", "blue", "green", "yellow", "purple", "brown"], {
     required_error: "Player must select a color",
   }),
 });
 
-export type JoinGameForm = z.infer<typeof JoinGameFormSchema>;
+export type JoinRPWGameForm = z.infer<typeof JoinRPWGameFormSchema>;

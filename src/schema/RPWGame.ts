@@ -1,4 +1,5 @@
-export interface Game {
+// Change this to RPWGame
+export interface RPWGame {
   game_id: string;
   created_at: Date | string;
   updated_at: Date | string;
@@ -13,12 +14,12 @@ export interface Game {
   player_5: string | null;
   player_6: string | null;
   round_starter:
-    | Game["player_1"]
-    | Game["player_2"]
-    | Game["player_3"]
-    | Game["player_4"]
-    | Game["player_5"]
-    | Game["player_6"];
+    | RPWGame["player_1"]
+    | RPWGame["player_2"]
+    | RPWGame["player_3"]
+    | RPWGame["player_4"]
+    | RPWGame["player_5"]
+    | RPWGame["player_6"];
   player_1_points: number;
   player_2_points: number | null;
   player_3_points: number | null;
