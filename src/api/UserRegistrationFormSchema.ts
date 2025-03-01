@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { usernameRegex } from "../utils/regex";
 
-export const RegistrationFormSchema = z
+export const UserRegistrationFormSchema = z
   .object({
     username: z
       .string({
@@ -31,4 +31,4 @@ export const RegistrationFormSchema = z
     return {};
   });
 
-export type RegistrationForm = z.infer<typeof RegistrationFormSchema>;
+export type UserRegistrationEntry = z.infer<typeof UserRegistrationFormSchema>;
