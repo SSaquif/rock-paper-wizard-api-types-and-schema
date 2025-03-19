@@ -1,3 +1,5 @@
+import { APIErrorResponse } from "../error/errors";
+
 export interface User {
   user_id: string;
   password: string;
@@ -7,3 +9,13 @@ export interface User {
   // email: string;
   // is_verified: boolean;
 }
+
+// @todo: Maybe breakdown into APIError and ClientError
+export type AuthenticatedUser =
+  | (Omit<User, "password"> & {
+      isError: false;
+    })
+  | (APIErrorResponse & {
+      isError: true;
+      message?: string;
+    });
