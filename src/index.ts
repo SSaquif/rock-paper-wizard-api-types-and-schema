@@ -1,6 +1,6 @@
 export * from "./api/NewRPWGameForm";
 export * from "./api/JoinRPWGameForm";
-export * from "./api/UserRegistrationFormSchema";
+export * from "./api/UserRegistrationForm";
 export * from "./api/LoginForm";
 export * from "./schema/RPWGame";
 export * from "./schema/RPWRound";
