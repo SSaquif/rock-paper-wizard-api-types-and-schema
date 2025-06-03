@@ -43,3 +43,7 @@ To remove the symlink:
 npm unlink your-package-name
 ```
 
+Sometimes I have to unlink and link again in the Server folder to get the changes to take effect.
+Need to figure out why this is happening.
+
+The error I get is something related to CommonJS and ESM modules but that doesn't seem to be the actual issue.
