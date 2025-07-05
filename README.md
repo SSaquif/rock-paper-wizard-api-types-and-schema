@@ -47,3 +47,14 @@ Sometimes I have to unlink and link again in the Server folder to get the change
 Need to figure out why this is happening.
 
 The error I get is something related to CommonJS and ESM modules but that doesn't seem to be the actual issue.
+
+> Solution: https://chatgpt.com/c/68685077-b228-800d-b4be-a2b1a599e54e
+
+Summary:
+
+- Don’t use `npm link <package-name> `
+- just `npm link <path-to-folder-with-package-json-file>`
+
+See chatgpt answer for more details and alternative solutions.
+
+> Weirdly, I don't seem to have this issue with the Client package. But I don't remember how I did the linking there.
