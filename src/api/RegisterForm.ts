@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { usernameRegex } from "../../dist";
+import { usernameRegex } from "../utils/regex";
 
 export const RegisterFormSchema = z
   .object({

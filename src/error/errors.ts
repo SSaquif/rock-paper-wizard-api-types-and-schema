@@ -17,6 +17,9 @@ export const SYSTEM_ERRORS = {
   PASSWORD_CONFIRMATION_REQUIRED: "Password confirmation is required",
   PASSWORD_MISMATCH: "Passwords do not match",
   SERVER_ERROR: "Server Error",
+  SESSION_ID_NOT_PROVIDED: "Session ID Not Provided",
+  SESSION_EXPIRED: "Session Expired",
+  SESSION_NOT_FOUND: "Session Not Found",
   USERNAME_REQUIRED: "Username is required",
   USERNAME_REGEX: "Username must contain only letters and numbers",
   USERNAME_MIN_LENGTH: "Username should be at least 3 characters long",
@@ -24,6 +27,8 @@ export const SYSTEM_ERRORS = {
   USER_NOT_FOUND: "User Does Not Exist",
   ZOD_SCHEMA_VALIDATION_ERROR: "Zod Schema Validation Error",
 } as const;
+
+// export const errorMessages = Object.values(SYSTEM_ERRORS);
 
 type XHRErrorType = typeof SYSTEM_ERRORS;
 type XHRErrorKeys = keyof typeof SYSTEM_ERRORS;
