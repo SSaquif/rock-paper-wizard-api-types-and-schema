@@ -9,3 +9,5 @@ export const APIErrorResponseSchema = z.object({
   statusCode: z.number().optional(),
   details: z.any().optional(),
 });
+
+export type APIErrorResponse = z.infer<typeof APIErrorResponseSchema>;

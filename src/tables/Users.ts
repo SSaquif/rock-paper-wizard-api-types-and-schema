@@ -1,4 +1,5 @@
-import { APIErrorResponse } from "../error/errors";
+// import { APIErrorResponse } from "../error/errors";
+import { APIErrorResponse } from "../api/APIErrorResponseSchema";
 
 export interface User {
   user_id: string;
@@ -28,7 +29,8 @@ export type AuthenticatedUser =
         session_expires_at: Date | string;
       };
     }
-  | (APIErrorResponse & {
-      isError: true;
-      message?: string;
-    });
+  | APIErrorResponse;
+// (APIErrorResponse & {
+//     isError: true;
+//     message?: string;
+//   });

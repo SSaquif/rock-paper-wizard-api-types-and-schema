@@ -1,4 +1,5 @@
-import { APIErrorResponse } from "../error/errors";
+// import { APIErrorResponse } from "../error/errors";
+import { APIErrorResponse } from "../api/APIErrorResponseSchema";
 
 export interface Session {
   session_id: string;
@@ -14,7 +15,8 @@ export type AuthenticatedSession =
       isError: false;
       session: Session;
     }
-  | (APIErrorResponse & {
-      isError: true;
-      message?: string;
-    });
+  | APIErrorResponse;
+// (APIErrorResponse & {
+//     isError: true;
+//     message?: string;
+//   });

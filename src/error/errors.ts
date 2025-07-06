@@ -35,6 +35,6 @@ type XHRErrorKeys = keyof typeof SYSTEM_ERRORS;
 export type XHRErrorMessages = XHRErrorType[XHRErrorKeys];
 
 // To be used in the API response
-export type APIErrorResponse = {
-  error: XHRErrorMessages;
-};
+// export type APIErrorResponse = {
+//   error: XHRErrorMessages;
+// };

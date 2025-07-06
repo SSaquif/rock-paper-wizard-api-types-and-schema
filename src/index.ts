@@ -7,6 +7,7 @@ export * from "./api/RegisterForm";
 export * from "./api/SessionSchema";
 export * from "./api/UserRegistrationForm";
 export * from "./error/errors";
+export * from "./messages/success-messages";
 export * from "./tables/RPWGame";
 export * from "./tables/RPWRound";
 export * from "./tables/Sessions";
