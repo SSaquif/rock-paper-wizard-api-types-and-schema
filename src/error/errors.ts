@@ -28,7 +28,7 @@ export const SYSTEM_ERRORS = {
   ZOD_SCHEMA_VALIDATION_ERROR: "Zod Schema Validation Error",
 } as const;
 
-// export const errorMessages = Object.values(SYSTEM_ERRORS);
+export const errorMessages = Object.values(SYSTEM_ERRORS);
 
 type XHRErrorType = typeof SYSTEM_ERRORS;
 type XHRErrorKeys = keyof typeof SYSTEM_ERRORS;
